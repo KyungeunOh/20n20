@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Be Yourself</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			but{
+				height: 5% !important;
+				width: 10% !important;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Content -->
+			<div id="content">
+				<div class="inner">
+					<button id="but"> Kor/Eng </button>
+					<button id="but"> Kor </button>
+					
+					<!-- Post -->
+						<article class="box post post-excerpt">
+							
+							<header>
+								<!--
+									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									if they get too long. You can also remove the <p> entirely if you don't
+									need a subtitle.
+								-->
+								<h2>Day15</h2>
+							</header>
+							<p id = "Kor_text">Kor</p>
+							<p id = "Eng_text">Eng</p>
+							<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+							<script type="text/javascript">
+
+								var Kor = new Array()
+								var Eng = new Array()
+								$(document).ready(function(){
+								$.getJSON("./assets/script/Day15.json", function(data){
+									$("#fname").html(data["name"]);
+									$(data["Korean"].each(function(i,Korean){
+										
+										/*
+										if(i!=0) { Kor[i] = Korean; }
+										Kor[i] = Korean;
+										*/
+										if(i!=0) {$("#Koreans").append(", ");}
+										$("#Koreans").append(Korean);
+										
+									}));
+									$(data["English"].each(function(i,Eng){
+										if(i!=0) { Eng[i] = Korean; }
+										Eng[i] = English;
+									}));
+								})
+								})
+								
+								var Korstr = document.getElementById("Kor_text");
+								//document.write("change");
+								//Korstr.innerHTML = "change";
+								var Engstr = document.getElementsById("Eng_text");
+								Engstr.innerHTML = Eng[0];
+
+								var which = Math.floor(Math.random() * (Kor.length));
+								document.write("#Koreans");
+								document.write(Eng[which]);
+								
+								function click(){
+									var Korstr = document.getElementById("Kor_text");
+									document.write("change");
+									Korstr.innerHTML = "change";
+								}
+							</script>
+							<p id="Koreans"></p>
+						</article>
+
+					<!-- Pagination -->
+						<div class="pagination">
+							<!--<a href="#" class="button previous">Previous Page</a>-->
+
+							<button id="but2"> < </button>
+
+							<div class="pages">
+								<button onclick="click()">1</button>
+								<!--
+									<input type = "button" value = "1" onClick = "click()">
+								 <a href="#" classinnerHTML="active">1</a> -->
+								<a href="#">2</a>
+								<a href="#">3</a>
+								<a href="#">4</a>
+								<span>&hellip;</span>
+								<a href="#">20</a>
+							</div>
+							<button id="but"> > </button>
+							
+							<!--
+							<a href="#" class="button next" id="but2">Next Page</a>
+							<a href="#" class="button next" id="but2">Prev Page</a>
+							-->
+						</div>
+
+				</div>
+			</div>
+
+		<!-- Sidebar -->
+			<div id="sidebar">
+
+				<!-- Logo -->
+					<h1 id="logo"><a href="#">20n20</a></h1>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="#">Day 13</a></li>
+							<li><a href="#">Day 14</a></li>
+							<li><a href="#">Day 15</a></li>
+							<li><a href="#">Day 16</a></li>
+						</ul>
+					</nav>
+
+				<!-- Copyright -->
+					<ul id="copyright">
+						<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
